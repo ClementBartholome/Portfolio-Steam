@@ -1,0 +1,56 @@
+@import url("https://fonts.cdnfonts.com/css/motiva-sans");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow: visible;
+  font-size: 16px;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+body {
+  color: white;
+  font-family: "Motiva Sans", sans-serif;
+  background: #171a21;
+  background: linear-gradient(
+    -45deg,
+    #0c0e11,
+    #2b2f3a,
+    #171a21,
+    #2b2f3a,
+    #0c0e11
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

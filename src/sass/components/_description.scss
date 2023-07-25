@@ -1,0 +1,47 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 14.5px;
+  .photo-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    .photo {
+      height: 190px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+
+  button {
+    align-self: flex-end;
+    color: #24a0ed;
+    font-size: 1.25rem;
+    border: none;
+    background: none;
+    border-radius: 2px;
+
+    &:hover {
+      color: #fff !important;
+      background: #417a9b;
+      background: -webkit-linear-gradient(150deg, #417a9b 5%, #67c1f5 95%);
+      background: linear-gradient(-60deg, #417a9b 5%, #67c1f5 95%);
+      transition: 0.3s;
+    }
+  }
+  .tag-list {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.tag {
+  border-radius: 2px;
+  background: rgba(103, 193, 245, 0.2);
+  padding: 5px 10px;
+  flex-shrink: 0;
+  color: #67c1f5;
+}

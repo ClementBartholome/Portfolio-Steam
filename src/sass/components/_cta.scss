@@ -1,0 +1,45 @@
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  p {
+    border-radius: 5px;
+    background: rgba(226, 244, 255, 0.3);
+    padding: 20px;
+    font-size: 1.5rem;
+    margin: 0;
+
+    &:last-of-type {
+      background: rgba(40, 46, 57, 0.3);
+    }
+  }
+
+  .contact-container {
+    position: relative;
+    bottom: 40px;
+    right: 20px;
+    border-radius: 2px;
+    background: #000;
+    width: 278px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    align-self: self-end;
+
+    span,
+    button {
+      font-size: 1.5rem;
+    }
+
+    button {
+      background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+      border: none;
+      color: white;
+      width: 123px;
+      height: 42px;
+      border-radius: 2px;
+    }
+  }
+}
