@@ -35,7 +35,7 @@ export default function Description() {
         <img
           className="photo"
           src="https://storage.googleapis.com/images_portfolio_steam/photo-cv.webp"
-          alt="Photo Clément Bartholomé"
+          alt="Clément Bartholomé"
         />
       </div>
       <p>
