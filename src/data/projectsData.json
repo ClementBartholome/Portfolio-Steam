@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "title": "Game Hub (projet en cours)",
+    "image": "https://storage.googleapis.com/images_portfolio_steam/project_gamehub.webp",
+    "description": "Game Hub est un faux site ecommerce de jeux vidéo./nIl inclut des pages dédiées pour chaque jeu en vente, un panier, une fonctionnalité de recherche filtrée (nom, tags, prix) ou encore la possibilité de liker un article pour le sauvegarder dans sa wishlist. J'ai réalisé ce projet personnel afin d'approfondir mes compétences avec React et SASS. Ce fut l'occasion de découvrir React Context (pour la gestion de l'état du panier et de l'authentification notamment) et de mettre en place pour la première fois une base de données ainsi qu'une fonctionnalité d'authentification avec son compte Google grâce à Firebase. Le projet n'est pas terminé et proposera prochainement un affichage responsive, une intégration de Stripe pour le paiement ou encore la possibilité de s'inscrire avec ses propres identifiants.",
+    "tags": ["React", "SASS", "Firebase"],
+    "code": "https://github.com/ClementBartholome/game-store",
+    "demo": "https://gamehub-clementbartholome.netlify.app/"
+  },
+  {
+    "id": 1,
+    "title": "Booki",
+    "image": "https://storage.googleapis.com/images_portfolio_steam/project-booki.webp",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida sapien vitae elit suscipit, vel ornare justo dapibus. Donec et risus volutpat, mollis massa non, imperdiet enim. Donec mollis nulla risus, sit amet accumsan risus egestas nec. Morbi sodales, lorem ut commodo lobortis, nibh lectus molestie purus, sed interdum lorem lectus sit amet nibh. Quisque id dictum lacus, ac cursus mauris. Curabitur et ipsum quis metus auctor porta eu vel magna. Nulla dictum vehicula elementum. Aenean facilisis molestie velit, eget mattis ex mollis id. Aliquam vitae eros interdum, dapibus metus et, tempus sem.",
+    "tags": ["HTML / CSS"],
+    "code": "https://github.com/ClementBartholome/P2-OpenClassrooms",
+    "demo": "https://clementbartholome.github.io/P2-OpenClassrooms/"
+  },
+  {
+    "id": 2,
+    "title": "Kasa",
+    "image": "https://storage.googleapis.com/images_portfolio_steam/project_kasa.webp",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida sapien vitae elit suscipit, vel ornare justo dapibus. Donec et risus volutpat, mollis massa non, imperdiet enim. Donec mollis nulla risus, sit amet accumsan risus egestas nec. Morbi sodales, lorem ut commodo lobortis, nibh lectus molestie purus, sed interdum lorem lectus sit amet nibh. Quisque id dictum lacus, ac cursus mauris. Curabitur et ipsum quis metus auctor porta eu vel magna. Nulla dictum vehicula elementum. Aenean facilisis molestie velit, eget mattis ex mollis id. Aliquam vitae eros interdum, dapibus metus et, tempus sem.",
+    "tags": ["React", "SASS"],
+    "code": "https://github.com/ClementBartholome/P6-OpenClassrooms",
+    "demo": "https://clementbartholome.github.io/P6-OpenClassrooms/"
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Sophie Bluel",
+    "image": "https://storage.googleapis.com/images_portfolio_steam/project-bluel.webp",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida sapien vitae elit suscipit, vel ornare justo dapibus. Donec et risus volutpat, mollis massa non, imperdiet enim. Donec mollis nulla risus, sit amet accumsan risus egestas nec. Morbi sodales, lorem ut commodo lobortis, nibh lectus molestie purus, sed interdum lorem lectus sit amet nibh. Quisque id dictum lacus, ac cursus mauris. Curabitur et ipsum quis metus auctor porta eu vel magna. Nulla dictum vehicula elementum. Aenean facilisis molestie velit, eget mattis ex mollis id. Aliquam vitae eros interdum, dapibus metus et, tempus sem.",
+    "tags": ["JavaScript", "HTML / CSS"],
+    "code": "https://github.com/ClementBartholome/P3-OpenClassrooms",
+    "demo": "https://gamehub-clementbartholome.netlify.app/"
+  }
+]
