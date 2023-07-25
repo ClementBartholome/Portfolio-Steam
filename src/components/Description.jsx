@@ -41,7 +41,7 @@ export default function Description() {
       <p>
         Clément Bartholomé est un développeur web passionné par le front-end et
         le webdesign. Dans un monde saisissant de réalisme, recrutez-le et
-        bénéficiez d’un collaborateur impliqué et rigoureux.
+        étendez votre empire numérique.
       </p>
       <button onClick={handleSeeMoreClick}>En savoir plus</button>
       <span>Évaluations : extrêmements positives</span>
