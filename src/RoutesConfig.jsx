@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/Portfolio-Steam" element={<HomePage />} />
     </Routes>
   );
 }
