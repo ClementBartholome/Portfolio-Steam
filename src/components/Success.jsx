@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactModal from "react-modal";
+import React from "react";
 
 import logoJV from "../assets/logo_jv.svg";
 import logoIscpa from "../assets/logo_iscpa.svg";

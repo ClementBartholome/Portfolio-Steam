@@ -1,4 +1,5 @@
 import ReactModal from "react-modal";
+import React from "react";
 import { useState, useEffect } from "react";
 
 export default function Description() {

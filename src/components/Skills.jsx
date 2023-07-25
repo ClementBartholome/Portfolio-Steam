@@ -1,4 +1,5 @@
 import checkmark from "../assets/checkmark.svg";
+import React from "react";
 
 export default function Skills() {
   return (

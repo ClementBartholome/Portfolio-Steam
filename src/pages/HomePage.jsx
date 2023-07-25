@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Carrousel from "../components/Carrousel";

@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import React from "react";
+
 export default function Slider({ previousImage, nextImage }) {
   return (
     <div className="slider_ctn">

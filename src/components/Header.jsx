@@ -1,5 +1,6 @@
 import logoGitHub from "../assets/logo_github.svg";
 import logoLinkedin from "../assets/logo_linkedin.svg";
+import React from "react";
 
 export default function Header() {
   return (

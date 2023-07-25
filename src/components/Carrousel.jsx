@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import React from "react";
 import { useState, useRef, useEffect } from "react";
 import Slider from "./Slider";
 import ReactModal from "react-modal";
