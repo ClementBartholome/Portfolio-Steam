@@ -8,14 +8,15 @@
     gap: 10px;
     padding: 0;
     max-height: 70vh;
-    max-width: 50vw;
+    max-width: 80%;
     margin: auto;
     color: white;
     background: #1b2838;
 
     img {
-      max-width: 70%;
       object-fit: cover;
+      height: 100%;
+      max-width: 70%;
     }
 
     button {
