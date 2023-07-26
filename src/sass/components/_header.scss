@@ -35,3 +35,26 @@ header {
     }
   }
 }
+
+@media (max-width: 1200px) {
+  header {
+    border-radius: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 780px) {
+  header .header-info {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+// @media (max-width: 1024px) {
+//   header .header-info {
+//     flex-direction: column;
+
+//     align-items: flex-start;
+//   }
+// }

@@ -31,27 +31,31 @@ export default function Description() {
 
   return (
     <section className="description">
-      <div className="photo-container">
-        <img
-          className="photo"
-          src="https://storage.googleapis.com/images_portfolio_steam/photo-cv.webp"
-          alt="Clément Bartholomé"
-        />
+      <div className="container">
+        <div className="photo-container">
+          <img
+            className="photo"
+            src="https://storage.googleapis.com/images_portfolio_steam/photo-cv.webp"
+            alt="Clément Bartholomé"
+          />
+        </div>
+        <p>
+          Clément Bartholomé est un développeur web passionné par le front-end
+          et le webdesign. Dans un monde saisissant de réalisme, recrutez-le et
+          étendez votre empire numérique.
+        </p>
+        <button onClick={handleSeeMoreClick}>En savoir plus</button>
+
+        <span>Évaluations : extrêmements positives</span>
+        <span>Date de parution : 17 janvier 1996</span>
       </div>
-      <p>
-        Clément Bartholomé est un développeur web passionné par le front-end et
-        le webdesign. Dans un monde saisissant de réalisme, recrutez-le et
-        étendez votre empire numérique.
-      </p>
-      <button onClick={handleSeeMoreClick}>En savoir plus</button>
-      <span>Évaluations : extrêmements positives</span>
-      <span>Date de parution : 17 janvier 1996</span>
       <span>Tags populaires :</span>
       <div className="tag-list">
         <span className="tag">Coopération</span>
         <span className="tag">Logique</span>
         <span className="tag">Programmation</span>
       </div>
+
       <ReactModal
         isOpen={isModalOpen}
         onRequestClose={closeModal}

@@ -1,33 +1,35 @@
-.carrousel {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  width: 726px;
-  height: 331px;
-
-  button {
-    border: none;
-    background: none;
-    color: white;
-    font-size: 80px;
-    cursor: pointer;
+.projects {
+  h2 {
+    font-weight: 300;
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    letter-spacing: 0.03em;
+    font-weight: normal;
   }
-  .carrousel-navigation {
-    position: absolute;
-    bottom: 40%;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+  .carrousel {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    height: 331px;
+    box-shadow: 0 0 10px 5px #000;
 
-  .carrousel-counter {
-    position: absolute;
-    font-weight: 500;
-    align-self: center;
-    left: 50%;
-    top: 300px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
+    .carrousel-navigation {
+      position: absolute;
+      bottom: 40%;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .carrousel-counter {
+      position: absolute;
+      font-weight: 500;
+      align-self: center;
+      left: 50%;
+      top: 300px;
+      color: white;
+      text-shadow: 2px 2px 2px black;
+    }
   }
 }
 
@@ -48,6 +50,7 @@
   img {
     width: 100%;
     object-fit: cover;
+    object-position: left;
   }
   .view-project-button {
     position: absolute;
@@ -57,7 +60,7 @@
     border: none;
     background: none;
     color: white;
-    font-size: 30px;
+    font-size: 1.875rem;
     cursor: pointer;
     text-shadow: 2px 2px 2px black;
   }
@@ -65,9 +68,7 @@
 
 .thumbnails {
   display: flex;
-
   overflow: hidden;
-  max-width: 725px;
 
   img {
     min-width: 235px;
@@ -143,18 +144,14 @@
   }
 }
 
-@media (max-width: 767.98px) {
-  .carrousel {
-    height: 255px;
+@media (max-width: 1024px) {
+  .projects .carrousel {
+    height: 425px;
+  }
+}
 
-    button {
-      font-size: 40px;
-    }
-    .carrousel-navigation {
-      bottom: 100px;
-    }
-    .carrousel-counter {
-      display: none;
-    }
+@media (max-width: 780px) {
+  .carrousel-container img {
+    min-height: 430px;
   }
 }
