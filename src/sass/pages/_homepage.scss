@@ -36,7 +36,8 @@
 
   .bot-container__right {
     .skills {
-      width: 433px;
+      width: 100%;
+      max-width: 425px;
       background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.2) 0%,
@@ -68,11 +69,11 @@
         }
 
         .checkmark-front {
-          margin-left: 55px;
+          margin-left: 40px;
         }
 
         .checkmark-back {
-          margin-left: 205px;
+          margin-left: 185px;
         }
       }
 
