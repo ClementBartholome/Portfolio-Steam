@@ -37,8 +37,6 @@
   .bot-container__right {
     .skills {
       width: 433px;
-      height: 200px;
-      flex-shrink: 0;
       background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.2) 0%,
@@ -47,7 +45,8 @@
       padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 2px;
+      font-size: 1.2rem;
 
       h2,
       span,
@@ -65,15 +64,15 @@
         display: flex;
 
         span {
-          width: 140px;
+          width: 160px;
         }
 
         .checkmark-front {
-          margin-left: 100px;
+          margin-left: 55px;
         }
 
         .checkmark-back {
-          margin-left: 235px;
+          margin-left: 205px;
         }
       }
 
@@ -96,6 +95,9 @@
   .top-container {
     flex-direction: column-reverse;
   }
+  .bot-container {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 780px) {
@@ -106,10 +108,6 @@
   .bot-container {
     flex-direction: column;
     align-items: center;
-
-    .bot-container__right .skills {
-      width: auto;
-    }
 
     // .bot-container__right {
     //   width: 100%;
