@@ -1,0 +1,30 @@
+.thumbnails {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  .thumbnail {
+    opacity: 0.3;
+  }
+
+  .thumbnail.selected {
+    opacity: 1;
+    border: 2px solid #fff;
+    position: relative;
+    padding: 4px;
+  }
+
+  img {
+    min-width: 229px;
+    height: 105px;
+    object-fit: cover;
+    margin: 20px 10px 0 0;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      opacity: 0.5;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
