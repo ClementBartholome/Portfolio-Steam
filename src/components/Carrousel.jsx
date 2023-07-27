@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Slider from "./Slider";
 import ReactModal from "react-modal";
 import projectsData from "../data/projectsData";
-import ViewProjectBtn from "./ViewProject";
+import ViewProjectBtn from "./ViewProjectBtn";
 
 export default function Carrousel({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
