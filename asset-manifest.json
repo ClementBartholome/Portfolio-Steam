@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-Steam/static/css/main.85e90f8b.css",
-    "main.js": "/Portfolio-Steam/static/js/main.f3492505.js",
+    "main.css": "/Portfolio-Steam/static/css/main.7119cce9.css",
+    "main.js": "/Portfolio-Steam/static/js/main.488b3391.js",
     "static/media/logo_iscpa.svg": "/Portfolio-Steam/static/media/logo_iscpa.228b4331d8fd9b7c346f7c9537d8d6e2.svg",
     "static/media/logo_linkedin.svg": "/Portfolio-Steam/static/media/logo_linkedin.65803f541f3e2e076060c8eaee82f14d.svg",
     "static/media/logo_jv.svg": "/Portfolio-Steam/static/media/logo_jv.873b50036178fbbf77e1e88f4db3ba81.svg",
@@ -9,11 +9,11 @@
     "static/media/logo_oc.svg": "/Portfolio-Steam/static/media/logo_oc.b77a0f91eb75e1165391093c928460fc.svg",
     "index.html": "/Portfolio-Steam/index.html",
     "static/media/checkmark.svg": "/Portfolio-Steam/static/media/checkmark.07ed2deb53ea71c3a3f979b847c12ad6.svg",
-    "main.85e90f8b.css.map": "/Portfolio-Steam/static/css/main.85e90f8b.css.map",
-    "main.f3492505.js.map": "/Portfolio-Steam/static/js/main.f3492505.js.map"
+    "main.7119cce9.css.map": "/Portfolio-Steam/static/css/main.7119cce9.css.map",
+    "main.488b3391.js.map": "/Portfolio-Steam/static/js/main.488b3391.js.map"
   },
   "entrypoints": [
-    "static/css/main.85e90f8b.css",
-    "static/js/main.f3492505.js"
+    "static/css/main.7119cce9.css",
+    "static/js/main.488b3391.js"
   ]
 }
