@@ -1,111 +1,30 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useState, useRef, useEffect } from "react";
-import Slider from "./Slider";
 import ReactModal from "react-modal";
-import projectsData from "../data/projectsData";
 import ViewProjectBtn from "./ViewProjectBtn";
+import Thumbnails from "./Thumbnails";
+import useCarrousel from "../hooks/useCarrousel";
 
 export default function Carrousel({ images }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
-  const [hoverIndex, setHoverIndex] = useState(-1);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchMoveX, setTouchMoveX] = useState(0);
-
-  const carrouselImageRef = useRef(null);
-
-  function imageSize() {
-    const carrouselImage = carrouselImageRef.current;
-
-    if (!carrouselImage) {
-      return 0;
-    }
-
-    return carrouselImage.width;
-  }
-
-  function previousImage() {
-    setCurrentImageIndex((currentIndex) =>
-      currentIndex === 0 ? images.length - 1 : currentIndex - 1
-    );
-    setSelectedThumbnailIndex((currentIndex) =>
-      currentIndex === 0 ? images.length - 1 : currentIndex - 1
-    );
-  }
-
-  function nextImage() {
-    setCurrentImageIndex((currentIndex) =>
-      currentIndex === images.length - 1 ? 0 : currentIndex + 1
-    );
-    setSelectedThumbnailIndex((currentIndex) =>
-      currentIndex === images.length - 1 ? 0 : currentIndex + 1
-    );
-  }
-
-  function handleCarrouselImageClick(index) {
-    setIsModalOpen(true);
-    setSelectedProject(projectsData[index]);
-  }
-
-  function handleThumbnailClick(index) {
-    setCurrentImageIndex(index);
-    setSelectedThumbnailIndex(index);
-  }
-
-  function closeModal() {
-    setIsModalOpen(false);
-  }
-
-  function handleMouseEnter(index) {
-    setHoverIndex(index);
-  }
-
-  function handleMouseLeave() {
-    setHoverIndex(-1);
-  }
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (isModalOpen) {
-        if (!e.target.closest("[data-modal]")) {
-          closeModal();
-        }
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [isModalOpen]);
-
-  const carrouselContainerRef = useRef(null);
-
-  function handleTouchStart(e) {
-    setTouchStartX(e.touches[0].clientX);
-    setTouchMoveX(0);
-  }
-
-  function handleTouchMove(e) {
-    setTouchMoveX(e.touches[0].clientX - touchStartX);
-  }
-
-  function handleTouchEnd() {
-    const threshold = 50; // threshold for changing slide
-    if (touchMoveX > threshold) {
-      previousImage();
-    } else if (touchMoveX < -threshold) {
-      nextImage();
-    }
-    setTouchStartX(0);
-    setTouchMoveX(0);
-  }
-
-  const transformX = -currentImageIndex * imageSize() + touchMoveX;
+  const {
+    isModalOpen,
+    selectedProject,
+    selectedThumbnailIndex,
+    hoverIndex,
+    carrouselContainerRef,
+    carrouselImageRef,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
+    transformX,
+    handleMouseEnter,
+    handleMouseLeave,
+    previousImage,
+    nextImage,
+    handleCarrouselImageClick,
+    handleThumbnailClick,
+    closeModal,
+  } = useCarrousel(images);
 
   return (
     <div className="projects">
@@ -142,21 +61,13 @@ export default function Carrousel({ images }) {
           ))}
         </div>
       </section>
-      <div className="thumbnails">
-        {images.map((image, index) => (
-          <img
-            className={`thumbnail ${
-              selectedThumbnailIndex === index ? "selected" : ""
-            }`}
-            src={image}
-            key={index}
-            alt="Project thumbnail"
-            onClick={() => handleThumbnailClick(index)}
-          />
-        ))}
-      </div>
-      <Slider previousImage={previousImage} nextImage={nextImage} />
-
+      <Thumbnails
+        selectedThumbnailIndex={selectedThumbnailIndex}
+        handleThumbnailClick={handleThumbnailClick}
+        images={images}
+        previousImage={previousImage}
+        nextImage={nextImage}
+      />
       <ReactModal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
