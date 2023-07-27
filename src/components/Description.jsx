@@ -71,7 +71,36 @@ export default function Description() {
             margin: "auto",
             background: "#1b2838",
           },
-        }}></ReactModal>
+        }}>
+        <div className="description-modal" data-modal>
+          <span className="close-modal-btn" onClick={closeModal}>
+            &times;
+          </span>
+          <h2>Bienvenue sur mon portfolio !</h2>
+          <p>
+            Si vous êtes adepte de jeux vidéo, notamment sur PC, vous aurez
+            normalement remarqué que ce portfolio s'inspire de la célèbre
+            plateforme Steam (sinon, je devrais sans doute revoir mon
+            design...). Un choix qui reflète mon identité et mon parcours :
+            journaliste de formation, j'ai travaillé pendant près de cinq ans
+            comme rédacteur freelance pour le site jeuxvideo.com (entre autres
+            médias).
+            <br></br>
+            <br></br>
+            Passionné par le monde du web, j'ai décidé de me reconvertir dans le
+            développement informatique pour mettre à profit ma créativité et mes
+            compétences techniques. J'aime concevoir des sites modernes,
+            fonctionnels et accessibles.
+            <br></br>
+            <br></br>
+            Mon objectif actuel : trouver une alternance au sein d'une
+            entreprise de Nouvelle-Aquitaine afin de préparer un diplôme Bac
+            +3/4 et enrichir mes compétences. Pour en savoir plus sur mes
+            expériences professionnelles et scolaires, je vous invite à cliquer
+            sur les "succès" en bas de page.
+          </p>
+        </div>
+      </ReactModal>
     </section>
   );
 }
