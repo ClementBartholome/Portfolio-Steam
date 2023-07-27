@@ -32,3 +32,9 @@
   background: linear-gradient(180deg, #2a475e 0%, #1b2838 80%);
   transition: all 0.475s;
 }
+
+@media (max-width: 1024px) {
+  .view-project-button {
+    padding: 0;
+  }
+}
