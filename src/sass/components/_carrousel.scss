@@ -70,6 +70,14 @@
   display: flex;
   overflow: hidden;
 
+  .thumbnail {
+    opacity: 0.3;
+  }
+
+  .thumbnail.selected {
+    opacity: 1;
+  }
+
   img {
     min-width: 235px;
     height: 105px;
@@ -152,6 +160,14 @@
 
 @media (max-width: 780px) {
   .carrousel-container img {
-    min-height: 430px;
+    // min-height: 430px;
+    height: 100%;
+  }
+  .thumbnails {
+    display: none;
+  }
+
+  .projects .carrousel {
+    height: auto;
   }
 }
