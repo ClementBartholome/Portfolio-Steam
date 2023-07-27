@@ -76,6 +76,7 @@
 
   .thumbnail.selected {
     opacity: 1;
+    border: 2px solid #fff;
   }
 
   img {
@@ -156,6 +157,11 @@
   .projects .carrousel {
     height: 425px;
   }
+
+  .carrousel-container img {
+    // min-height: 430px;
+    height: 100%;
+  }
 }
 
 @media (max-width: 780px) {
@@ -169,5 +175,11 @@
 
   .projects .carrousel {
     height: auto;
+  }
+
+  .carrousel-container {
+    .view-project-button {
+      font-size: 1.5rem;
+    }
   }
 }
