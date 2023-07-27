@@ -12,6 +12,8 @@ export default function Carrousel({ images }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState(-1);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchMoveX, setTouchMoveX] = useState(0);
 
   const carrouselImageRef = useRef(null);
 
@@ -81,15 +83,43 @@ export default function Carrousel({ images }) {
     };
   }, [isModalOpen]);
 
+  const carrouselContainerRef = useRef(null);
+
+  function handleTouchStart(e) {
+    setTouchStartX(e.touches[0].clientX);
+    setTouchMoveX(0);
+  }
+
+  function handleTouchMove(e) {
+    setTouchMoveX(e.touches[0].clientX - touchStartX);
+  }
+
+  function handleTouchEnd() {
+    const threshold = 50; // threshold for changing slide
+    if (touchMoveX > threshold) {
+      previousImage();
+    } else if (touchMoveX < -threshold) {
+      nextImage();
+    }
+    setTouchStartX(0);
+    setTouchMoveX(0);
+  }
+
+  const transformX = -currentImageIndex * imageSize() + touchMoveX;
+
   return (
     <div className="projects">
-      <h2>Mes projets</h2>
+      <h2>Projets</h2>
       <section className="carrousel">
         <div
           className="carrousel-container"
           style={{
-            transform: `translateX(-${currentImageIndex * imageSize()}px)`,
-          }}>
+            transform: `translateX(${transformX}px)`,
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          ref={carrouselContainerRef}>
           {images.map((image, index) => (
             <div
               className="carrousel-image-container"
