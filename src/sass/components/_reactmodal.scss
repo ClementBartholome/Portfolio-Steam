@@ -16,11 +16,18 @@
     img {
       object-fit: cover;
       height: 100%;
-      max-width: 70%;
+      max-height: 350px;
     }
 
     button {
       width: 100px;
     }
+  }
+}
+
+@media (max-width: 780px) {
+  .ReactModal__Overlay .ReactModal__Content img {
+    object-fit: contain;
+    width: 100%;
   }
 }

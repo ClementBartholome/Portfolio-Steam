@@ -31,6 +31,7 @@ export default function Description() {
 
   return (
     <section className="description">
+      <h2>Profil</h2>
       <div className="container">
         <div className="photo-container">
           <img

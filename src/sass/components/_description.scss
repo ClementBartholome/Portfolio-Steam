@@ -3,6 +3,13 @@
   flex-direction: column;
   gap: 14.5px;
 
+  h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+  }
+
   .container {
     display: flex;
     flex-direction: column;

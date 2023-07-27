@@ -17,7 +17,7 @@
   .description-container {
     min-width: 40%;
     .description {
-      padding: 33px 10px 0 10px;
+      padding: 0 10px;
     }
   }
 }
@@ -99,6 +99,10 @@
   }
   .bot-container {
     flex-direction: column;
+  }
+
+  .top-container .description-container .description {
+    padding: 0 10px 0 10px;
   }
 }
 
