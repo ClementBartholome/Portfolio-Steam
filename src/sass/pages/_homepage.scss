@@ -7,7 +7,7 @@
 .top-container {
   display: flex;
   background: #1b2838;
-  padding: 10px 15px 20px 15px;
+  padding: 30px 15px 20px 15px;
   gap: 12px;
 
   .carousel-container {
@@ -95,6 +95,7 @@
 @media (max-width: 1024px) {
   .top-container {
     flex-direction: column-reverse;
+    gap: 30px;
   }
   .bot-container {
     flex-direction: column;
