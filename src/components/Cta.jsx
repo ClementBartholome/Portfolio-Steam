@@ -107,7 +107,10 @@ export default function Cta() {
               />
               <p>Clément Bartholomé</p>
             </div>
-            <span className="close-modal-btn" onClick={closeModal}>
+            <span
+              className="close-modal-btn"
+              onClick={closeModal}
+              aria-label="close">
               &times;
             </span>
           </div>

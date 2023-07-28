@@ -85,7 +85,10 @@ export default function Carrousel({ images }) {
         data-modal>
         {selectedProject && (
           <div className="project-modal" data-modal>
-            <span className="close-modal-btn" onClick={closeModal}>
+            <span
+              className="close-modal-btn"
+              onClick={closeModal}
+              aria-label="close">
               &times;
             </span>
             <h2>{selectedProject.title}</h2>

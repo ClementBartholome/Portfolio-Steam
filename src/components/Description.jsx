@@ -78,7 +78,10 @@ export default function Description() {
           },
         }}>
         <div className="description-modal" data-modal>
-          <span className="close-modal-btn" onClick={closeModal}>
+          <span
+            className="close-modal-btn"
+            onClick={closeModal}
+            aria-label="close">
             &times;
           </span>
           <h2>Bienvenue sur mon portfolio !</h2>
