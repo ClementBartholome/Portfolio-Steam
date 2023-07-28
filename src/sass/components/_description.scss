@@ -33,17 +33,15 @@
 
   button {
     align-self: flex-end;
-    color: #24a0ed;
+    color: #fff;
+    background-color: #1a9fff;
+    padding: 6px 12px;
     font-size: 1.25rem;
     border: none;
-    background: none;
     border-radius: 2px;
 
     &:hover {
-      color: #fff !important;
-      background: #417a9b;
-      background: -webkit-linear-gradient(150deg, #417a9b 5%, #67c1f5 95%);
-      background: linear-gradient(-60deg, #417a9b 5%, #67c1f5 95%);
+      background-color: #0bf;
       transition: 0.3s;
     }
   }
@@ -74,11 +72,6 @@
     button,
     span {
       grid-column: 2;
-    }
-    button {
-      margin-left: auto;
-      color: #67c1f5 !important;
-      background: rgba(103, 193, 245, 0.2);
     }
   }
 }

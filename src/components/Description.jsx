@@ -81,7 +81,7 @@ export default function Description() {
             Si vous êtes adepte de jeux vidéo, notamment sur PC, vous aurez
             normalement remarqué que ce portfolio s'inspire de la célèbre
             plateforme Steam (sinon, je devrais sans doute revoir mon
-            design...). Un choix qui reflète mon identité et mon parcours :
+            design...). Ce choix reflète mon identité et mon parcours :
             journaliste de formation, j'ai travaillé pendant près de cinq ans
             comme rédacteur freelance pour le site jeuxvideo.com (entre autres
             médias).
@@ -90,7 +90,10 @@ export default function Description() {
             Passionné par le monde du web, j'ai décidé de me reconvertir dans le
             développement informatique pour mettre à profit ma créativité et mes
             compétences techniques. J'aime concevoir des sites modernes,
-            fonctionnels et accessibles.
+            fonctionnels et accessibles qui répondent aux besoins des
+            utilisateurs. Quand je ne code pas, vous me trouverez sûrement en
+            train de lire un roman de science-fiction, de jouer du piano ou de
+            regarder un match de basketball.
             <br></br>
             <br></br>
             Mon objectif actuel : trouver une alternance au sein d'une

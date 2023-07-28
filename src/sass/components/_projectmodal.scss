@@ -57,3 +57,10 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .project-modal .project-details p {
+    max-height: 100%;
+    overflow: initial;
+  }
+}
