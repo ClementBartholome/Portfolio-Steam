@@ -41,10 +41,15 @@ export default function Description() {
           />
         </div>
         <p>
+          Dans l'univers infini du développement web, plongez dans une aventure
+          épique aux côtés de Clément Bartholomé. Recrutez-le pour étendre votre
+          empire numérique.
+        </p>
+        {/* <p>
           Clément Bartholomé est un développeur web passionné par le front-end
           et le webdesign. Dans un monde saisissant de réalisme, recrutez-le et
           étendez votre empire numérique.
-        </p>
+        </p> */}
         <button onClick={handleSeeMoreClick}>En savoir plus</button>
 
         <span>Évaluations : extrêmements positives</span>
