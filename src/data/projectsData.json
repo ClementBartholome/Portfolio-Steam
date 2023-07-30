@@ -4,7 +4,7 @@
     "title": "Game Hub (projet en cours)",
     "image": "https://storage.googleapis.com/images_portfolio_steam/project_gamehub_3.webp",
     "description": "Game Hub est un site ecommerce fictif de jeux vidéo. Il inclut des pages dédiées pour chaque jeu en vente, un panier, une fonctionnalité de recherche filtrée (nom, tags, prix) ou encore la possibilité de liker un article pour le sauvegarder dans sa wishlist. J'ai réalisé ce projet personnel afin d'approfondir mes compétences avec React et SASS. Ce fut l'occasion de découvrir React Context (pour la gestion de l'état du panier et de l'authentification notamment) et de mettre en place une base de données ainsi qu'une fonctionnalité d'authentification avec un compte Google grâce à Firebase. Le projet n'est pas terminé et proposera prochainement un affichage responsive, une intégration de Stripe pour le paiement ou encore la possibilité de s'inscrire avec ses propres identifiants.",
-    "tags": ["React", "SASS", "Firebase"],
+    "tags": ["React", "SASS", "Firestore Database (NoSQL)", "Firebase Auth"],
     "code": "https://github.com/ClementBartholome/game-store",
     "demo": "https://gamehub-clementbartholome.netlify.app/"
   },
@@ -12,7 +12,7 @@
     "id": 1,
     "title": "Portfolio Sophie Bluel",
     "image": "https://storage.googleapis.com/images_portfolio_steam/project-bluel.webp",
-    "description": "Dans le scénario de ce projet, j'étais envoyé comme développeur front-end en renfort d'une équipe qui travaille sur le site portfolio d'une architecte. J'ai ainsi appris à réaliser des requêtes API pour récupérer les travaux de l'architecte depuis le back-end existant, et à les afficher dynamiquement dans une galerie avec des boutons de filtre. J'ai également dû mettre en place la page de connexion de l'administrateur du site, la gestion du token et la modale permettant d'uploader / supprimer de nouveaux projets.",
+    "description": "Dans le scénario de ce projet, j'étais envoyé comme développeur front-end en renfort d'une équipe qui travaille sur le site portfolio d'une architecte. J'ai ainsi appris à réaliser des requêtes API pour récupérer les travaux de l'architecte depuis le back-end existant, et à les afficher dynamiquement dans une galerie avec des boutons de filtre. J'ai également dû mettre en place la page de connexion de l'administrateur du site, la gestion du token et la modale permettant d'uploader / supprimer de nouveaux projets. Pour la structure du code, j'ai suivi le pattern MVC.",
     "tags": ["JavaScript", "HTML / CSS", "Figma", "Swagger UI"],
     "code": "https://github.com/ClementBartholome/P3-OpenClassrooms",
     "demo": "https://gamehub-clementbartholome.netlify.app/"
