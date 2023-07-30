@@ -93,9 +93,10 @@ export default function Cta() {
           content: {
             padding: "0px",
             width: "100%",
-            height: "100%",
+            height: "auto",
             margin: "auto",
             background: "#1b2838",
+            inset: "initial",
           },
         }}>
         <div className="contact-modal" data-modal>

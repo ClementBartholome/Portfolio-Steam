@@ -80,6 +80,7 @@ export default function Carrousel({ images }) {
             height: "100%",
             margin: "auto",
             background: "#1b2838",
+            inset: "initial",
           },
         }}
         data-modal>

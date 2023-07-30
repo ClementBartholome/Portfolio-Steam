@@ -76,6 +76,7 @@ export default function Success() {
             height: "100%",
             margin: "auto",
             background: "#1b2838",
+            inset: "initial",
           },
         }}>
         {selectedSuccess && (

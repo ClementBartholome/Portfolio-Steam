@@ -75,6 +75,7 @@ export default function Description() {
             height: "100%",
             margin: "auto",
             background: "#1b2838",
+            inset: "initial",
           },
         }}>
         <div className="description-modal" data-modal>
