@@ -34,6 +34,10 @@
   }
 }
 
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
 @media (max-width: 780px) {
   .ReactModal__Overlay {
     .ReactModal__Content {
