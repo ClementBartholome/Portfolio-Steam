@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactModal from "react-modal";
 import React from "react";
+import Loader from "./Loader";
 
 import logoJV from "../assets/logo_jv.svg";
 import logoIscpa from "../assets/logo_iscpa.svg";
@@ -10,6 +11,7 @@ import successData from "../data/successData";
 export default function Success() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedSuccess, setSelectedSuccess] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   function handleSuccessClick(index) {
     setIsModalOpen(true);
@@ -35,6 +37,24 @@ export default function Success() {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [isModalOpen]);
+
+  useEffect(() => {
+    if (selectedSuccess) {
+      setIsLoading(true);
+      const image = new Image();
+      image.src = selectedSuccess.header;
+      image.onload = handleImageLoad;
+      image.onerror = handleImageError;
+    }
+  }, [selectedSuccess]);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleImageError = () => {
+    setIsLoading(false); // Set isLoading to false if the image fails to load
+  };
 
   return (
     <section className="success-container">
@@ -81,16 +101,22 @@ export default function Success() {
         }}>
         {selectedSuccess && (
           <div className="success-modal" data-modal>
-            <span className="close-modal-btn" onClick={closeModal}>
-              &times;
-            </span>
-            <img src={selectedSuccess.header} alt={selectedSuccess.title}></img>
-            <h2>{selectedSuccess.title}</h2>
-            <span className="period">{selectedSuccess.years}</span>
-            <p className="description">{selectedSuccess.description}</p>
-            <a href={selectedSuccess.lien} target="_blank" rel="noreferrer">
-              <p className="tag">Lien</p>
-            </a>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <>
+                <span className="close-modal-btn" onClick={closeModal}>
+                  &times;
+                </span>
+                <img src={selectedSuccess.header} alt={selectedSuccess.title} />
+                <h2>{selectedSuccess.title}</h2>
+                <span className="period">{selectedSuccess.years}</span>
+                <p className="description">{selectedSuccess.description}</p>
+                <a href={selectedSuccess.lien} target="_blank" rel="noreferrer">
+                  <p className="tag">Lien</p>
+                </a>
+              </>
+            )}
           </div>
         )}
       </ReactModal>
