@@ -77,3 +77,9 @@
     align-items: center;
   }
 }
+
+@media (max-width: 780px) {
+  .success-modal .description {
+    width: 100%;
+  }
+}
