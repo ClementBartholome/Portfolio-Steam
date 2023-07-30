@@ -89,14 +89,18 @@ export default function Description() {
           <p>
             Si vous êtes adepte de jeux vidéo, notamment sur PC, vous aurez
             normalement remarqué que ce portfolio s'inspire de la célèbre
-            plateforme Steam (sinon, je devrais sans doute revoir mon
-            design...). Ce choix reflète mon identité et mon parcours :
-            journaliste de formation, j'ai travaillé pendant près de cinq ans
-            comme rédacteur freelance pour le site jeuxvideo.com (entre autres
+            plateforme <span className="highlight">Steam</span> (sinon, je
+            devrais sans doute revoir mon design...). Ce choix reflète mon
+            identité et mon parcours :{" "}
+            <span className="highlight">journaliste</span> de formation, j'ai
+            travaillé pendant près de cinq ans comme{" "}
+            <span className="highlight">rédacteur freelance</span> pour le site{" "}
+            <span className="highlight">jeuxvideo.com</span> (entre autres
             médias).
             <br></br>
             <br></br>
-            Passionné par le monde du web, j'ai décidé de me reconvertir dans le
+            Passionné par le monde du web, j'ai décidé de{" "}
+            <span className="highlight">me reconvertir</span> dans le
             développement informatique pour mettre à profit ma créativité et mes
             compétences techniques. J'aime concevoir des sites modernes,
             fonctionnels et accessibles qui répondent aux besoins des
@@ -105,11 +109,13 @@ export default function Description() {
             regarder un match de basketball.
             <br></br>
             <br></br>
-            Mon objectif actuel : trouver une alternance au sein d'une
-            entreprise de Nouvelle-Aquitaine afin de préparer un diplôme Bac
-            +3/4 et enrichir mes compétences. Pour en savoir plus sur mes
-            expériences professionnelles et scolaires, je vous invite à cliquer
-            sur les "succès" en bas de page.
+            Mon objectif actuel : trouver une{" "}
+            <span className="highlight">alternance</span> au sein d'une
+            entreprise de Nouvelle-Aquitaine afin de préparer un{" "}
+            <span className="highlight">diplôme Bac +3/4</span> et enrichir mes
+            compétences. Pour en savoir plus sur mes expériences
+            professionnelles et scolaires, je vous invite à cliquer sur les
+            "succès" en bas de page.
           </p>
         </div>
       </ReactModal>
