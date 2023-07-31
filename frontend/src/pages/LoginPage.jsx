@@ -12,7 +12,7 @@ export default function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/api/auth/login", { email, password })
+      .post("https://portfolio-steam-backend.onrender.com/api/auth/login", { email, password })
       .then((response) => {
         console.log("Connexion réussie!");
         setToken(response.data.token);
