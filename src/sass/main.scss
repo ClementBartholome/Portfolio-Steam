@@ -1,3 +1,5 @@
+@import "./utils/variables";
+
 @import "./base/base";
 
 @import "./components/carrousel";
@@ -17,6 +19,7 @@
 @import "./components/loader";
 
 @import "./pages/homepage";
+@import "./pages/loginpage";
 
 /* Modèle
 @import "./utils/variables";

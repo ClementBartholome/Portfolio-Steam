@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useContext } from "react";
 import ReactModal from "react-modal";
 import ViewProjectBtn from "./ViewProjectBtn";
 import Thumbnails from "./Thumbnails";
 import useCarrousel from "../hooks/useCarrousel";
+import AuthContext from "../contexts/AuthContext";
 
 export default function Carrousel({ images }) {
   const {
@@ -26,9 +27,23 @@ export default function Carrousel({ images }) {
     closeModal,
   } = useCarrousel(images);
 
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
+  const logOut = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className="projects">
       <h2>Projets</h2>
+      {isLoggedIn ? (
+        <div className="log-actions">
+          <button>Modifier</button>
+          <button onClick={logOut}>Déconnexion</button>
+        </div>
+      ) : (
+        ""
+      )}
       <section className="carrousel">
         <div
           className="carrousel-container"
