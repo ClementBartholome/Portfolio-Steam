@@ -16,7 +16,7 @@ export default function LoginPage() {
       .then((response) => {
         console.log("Connexion réussie!");
         setToken(response.data.token);
-        navigate("/Portfolio-Steam");
+        navigate("/");
       })
       .catch((error) => {
         console.error("Connexion échouée", error);
