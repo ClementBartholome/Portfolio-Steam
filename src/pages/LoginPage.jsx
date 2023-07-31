@@ -7,7 +7,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(AuthContext);
+  const { setIsLoggedIn, setToken } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,6 +16,7 @@ export default function LoginPage() {
       .then((response) => {
         console.log("Connexion réussie!");
         setIsLoggedIn(true);
+        setToken(response.data.token);
         navigate("/Portfolio-Steam");
       })
       .catch((error) => {

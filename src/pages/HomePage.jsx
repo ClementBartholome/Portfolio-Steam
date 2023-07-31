@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Carrousel from "../components/Carrousel";
@@ -7,7 +7,7 @@ import Cta from "../components/Cta";
 import Skills from "../components/Skills";
 import Success from "../components/Success";
 import Footer from "../components/Footer";
-import projects from "../data/projectsData";
+import ProjectsContext from "../contexts/ProjectsContext";
 
 const fadeInUpAnimation = {
   hidden: { opacity: 0, y: -20 },
@@ -21,6 +21,7 @@ const fadeInUpAnimation = {
 };
 
 export default function HomePage() {
+  const projects = useContext(ProjectsContext);
   const images = projects.map((project) => project.image);
   return (
     <>

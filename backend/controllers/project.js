@@ -13,15 +13,14 @@ exports.getSingleProject = (req, res, next) => {
 };
 
 exports.createProject = (req, res, next) => {
-  const projectObject = JSON.parse(req.body.project);
-  delete projectObject._id;
-  delete projectObject._userId;
   const project = new Project({
-    ...projectObject,
-    id: req.auth.id,
-    imageUrl: `${req.protocol}://${req.get("host")}/images/${
-      req.file.filename
-    }`,
+    id: req.body.id,
+    title: req.body.title,
+    image: req.body.image,
+    description: req.body.description,
+    tags: req.body.tags,
+    code: req.body.code,
+    demo: req.body.demo,
   });
   project
     .save()

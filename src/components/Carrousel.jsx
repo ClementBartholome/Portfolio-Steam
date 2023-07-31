@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import ReactModal from "react-modal";
 import ViewProjectBtn from "./ViewProjectBtn";
 import Thumbnails from "./Thumbnails";
+import ProjectManagement from "./ModifyBtn";
 import useCarrousel from "../hooks/useCarrousel";
 import AuthContext from "../contexts/AuthContext";
 
@@ -38,7 +39,7 @@ export default function Carrousel({ images }) {
       <h2>Projets</h2>
       {isLoggedIn ? (
         <div className="log-actions">
-          <button>Modifier</button>
+          <ProjectManagement />
           <button onClick={logOut}>Déconnexion</button>
         </div>
       ) : (

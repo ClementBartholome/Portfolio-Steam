@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import projectsData from "../data/projectsData";
+import { getAllProjects } from "../components/getData";
 
 export default function useCarrousel(images) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -12,6 +12,15 @@ export default function useCarrousel(images) {
 
   const carrouselImageRef = useRef(null);
   const carrouselContainerRef = useRef(null);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const projectsData = await getAllProjects();
+      setProjects(projectsData);
+    };
+    fetchProjects();
+  }, []);
 
   function imageSize() {
     const carrouselImage = carrouselImageRef.current;
@@ -43,7 +52,7 @@ export default function useCarrousel(images) {
 
   function handleCarrouselImageClick(index) {
     setIsModalOpen(true);
-    setSelectedProject(projectsData[index]);
+    setSelectedProject(projects[index]);
   }
 
   function handleThumbnailClick(index) {
