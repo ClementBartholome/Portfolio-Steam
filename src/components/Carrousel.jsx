@@ -28,16 +28,16 @@ export default function Carrousel({ images }) {
     closeModal,
   } = useCarrousel(images);
 
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { token, setToken } = useContext(AuthContext);
 
   const logOut = () => {
-    setIsLoggedIn(false);
+    setToken("");
   };
 
   return (
     <div className="projects">
       <h2>Projets</h2>
-      {isLoggedIn ? (
+      {token ? (
         <div className="log-actions">
           <ProjectManagement />
           <button onClick={logOut}>Déconnexion</button>

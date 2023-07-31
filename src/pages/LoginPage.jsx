@@ -7,7 +7,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { setIsLoggedIn, setToken } = useContext(AuthContext);
+  const { setToken } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,7 +15,6 @@ export default function LoginPage() {
       .post("http://localhost:4000/api/auth/login", { email, password })
       .then((response) => {
         console.log("Connexion réussie!");
-        setIsLoggedIn(true);
         setToken(response.data.token);
         navigate("/Portfolio-Steam");
       })
@@ -24,21 +23,21 @@ export default function LoginPage() {
       });
   };
 
-  const handleSignup = (e) => {
-    e.preventDefault();
-    // Add your signup logic here using Axios POST request
-    // For example:
-    axios
-      .post("http://localhost:4000/api/auth/signup", { email, password })
-      .then((response) => {
-        // Handle the response, e.g., redirect or show a success message
-        console.log("Inscription réussie!");
-      })
-      .catch((error) => {
-        // Handle errors, e.g., display an error message
-        console.error("Inscription échouée", error);
-      });
-  };
+  // const handleSignup = (e) => {
+  //   e.preventDefault();
+  //   // Add your signup logic here using Axios POST request
+  //   // For example:
+  //   axios
+  //     .post("http://localhost:4000/api/auth/signup", { email, password })
+  //     .then((response) => {
+  //       // Handle the response, e.g., redirect or show a success message
+  //       console.log("Inscription réussie!");
+  //     })
+  //     .catch((error) => {
+  //       // Handle errors, e.g., display an error message
+  //       console.error("Inscription échouée", error);
+  //     });
+  // };
 
   return (
     <main className="login-page">
@@ -71,9 +70,9 @@ export default function LoginPage() {
             <button type="submit" className="login-btn" onClick={handleLogin}>
               Connexion
             </button>
-            <button type="submit" className="signup-btn" onClick={handleSignup}>
+            {/* <button type="submit" className="signup-btn" onClick={handleSignup}>
               Inscription
-            </button>
+            </button> */}
           </div>
         </div>
       </form>
