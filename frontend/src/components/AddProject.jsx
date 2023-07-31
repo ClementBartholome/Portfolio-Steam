@@ -34,7 +34,7 @@ export default function AddProject() {
       };
 
       axios
-        .post("http://localhost:4000/api/projects", projectData, config)
+        .post("https://portfolio-steam-backend.onrender.com/api/projects", projectData, config)
         .then((response) => {
           console.log("Projet ajouté avec succès!");
           setConfirmationMessage("Projet ajouté !");
