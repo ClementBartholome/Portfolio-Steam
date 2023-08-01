@@ -6,8 +6,10 @@ import Thumbnails from "./Thumbnails";
 import ProjectManagement from "./ModifyBtn";
 import useCarrousel from "../hooks/useCarrousel";
 import AuthContext from "../contexts/AuthContext";
+import ProjectsContext from "../contexts/ProjectsContext";
+import Loader from "./Loader";
 
-export default function Carrousel({ images }) {
+export default function Carrousel() {
   const {
     isModalOpen,
     selectedProject,
@@ -26,7 +28,10 @@ export default function Carrousel({ images }) {
     handleCarrouselImageClick,
     handleThumbnailClick,
     closeModal,
-  } = useCarrousel(images);
+  } = useCarrousel();
+
+  const {projects, isLoading} = useContext(ProjectsContext);
+  const images = projects.map((project) => project.image);
 
   const { token, setToken } = useContext(AuthContext);
 
@@ -46,6 +51,9 @@ export default function Carrousel({ images }) {
         ""
       )}
       <section className="carrousel">
+      {isLoading ? (
+        <Loader /> 
+      ) : (
         <div
           className="carrousel-container"
           style={{
@@ -76,6 +84,7 @@ export default function Carrousel({ images }) {
             </div>
           ))}
         </div>
+      )}
       </section>
       <Thumbnails
         selectedThumbnailIndex={selectedThumbnailIndex}

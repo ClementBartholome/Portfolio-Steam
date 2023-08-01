@@ -5,17 +5,24 @@ const ProjectsContext = createContext();
 
 export const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      const projectsData = await getAllProjects();
-      setProjects(projectsData);
+    const fetchProjectsData = async () => {
+      try {
+        const projectsData = await getAllProjects();
+        setProjects(projectsData);
+        setIsLoading(false); 
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setIsLoading(false); 
+      }
     };
-    fetchProjects();
+    fetchProjectsData();
   }, []);
 
   return (
-    <ProjectsContext.Provider value={projects}>
+    <ProjectsContext.Provider value={{projects, isLoading}}>
       {children}
     </ProjectsContext.Provider>
   );
