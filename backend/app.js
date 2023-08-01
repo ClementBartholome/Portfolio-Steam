@@ -3,16 +3,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const helmet = require("helmet");
 
 const projectRoutes = require("./routes/project");
 const userRoutes = require("./routes/user");
 
+require("dotenv").config();
+
 const app = express();
+
+app.use(helmet());
 
 app.use(express.json());
 mongoose
   .connect(
-    `mongodb+srv://clementoss:xgQm&7e3tRrbE9Jj@cluster0.rmzgmk1.mongodb.net/?retryWrites=true&w=majority`,
+    process.env.MONGO_URI,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))

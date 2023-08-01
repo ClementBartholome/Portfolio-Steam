@@ -3,10 +3,13 @@ import React, { useContext } from "react";
 import ReactModal from "react-modal";
 import ViewProjectBtn from "./ViewProjectBtn";
 import Thumbnails from "./Thumbnails";
+import ProjectManagement from "./ModifyBtn";
 import useCarrousel from "../hooks/useCarrousel";
 import AuthContext from "../contexts/AuthContext";
+import ProjectsContext from "../contexts/ProjectsContext";
+import Loader from "./Loader";
 
-export default function Carrousel({ images }) {
+export default function Carrousel() {
   const {
     isModalOpen,
     selectedProject,
@@ -25,26 +28,30 @@ export default function Carrousel({ images }) {
     handleCarrouselImageClick,
     handleThumbnailClick,
     closeModal,
-  } = useCarrousel(images);
+  } = useCarrousel();
 
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const {isLoading, images} = useContext(ProjectsContext);
+    const { token, setToken } = useContext(AuthContext);
 
   const logOut = () => {
-    setIsLoggedIn(false);
+    setToken("");
   };
 
   return (
     <div className="projects">
       <h2>Projets</h2>
-      {isLoggedIn ? (
+      {token ? (
         <div className="log-actions">
-          <button>Modifier</button>
+          <ProjectManagement />
           <button onClick={logOut}>Déconnexion</button>
         </div>
       ) : (
         ""
       )}
       <section className="carrousel">
+      {isLoading ? (
+        <Loader /> 
+      ) : (
         <div
           className="carrousel-container"
           style={{
@@ -75,6 +82,7 @@ export default function Carrousel({ images }) {
             </div>
           ))}
         </div>
+      )}
       </section>
       <Thumbnails
         selectedThumbnailIndex={selectedThumbnailIndex}
