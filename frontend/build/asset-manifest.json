@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Portfolio-Steam/static/css/main.cb59ad0c.css",
+    "main.js": "/Portfolio-Steam/static/js/main.73436ddc.js",
+    "static/media/logo_iscpa.svg": "/Portfolio-Steam/static/media/logo_iscpa.228b4331d8fd9b7c346f7c9537d8d6e2.svg",
+    "static/media/logo_linkedin.svg": "/Portfolio-Steam/static/media/logo_linkedin.65803f541f3e2e076060c8eaee82f14d.svg",
+    "static/media/logo_jv.svg": "/Portfolio-Steam/static/media/logo_jv.873b50036178fbbf77e1e88f4db3ba81.svg",
+    "static/media/logo_github.svg": "/Portfolio-Steam/static/media/logo_github.9f27525841445e5bc561fc0e54bad4de.svg",
+    "static/media/logo_oc.svg": "/Portfolio-Steam/static/media/logo_oc.b77a0f91eb75e1165391093c928460fc.svg",
+    "index.html": "/Portfolio-Steam/index.html",
+    "static/media/checkmark.svg": "/Portfolio-Steam/static/media/checkmark.07ed2deb53ea71c3a3f979b847c12ad6.svg",
+    "main.cb59ad0c.css.map": "/Portfolio-Steam/static/css/main.cb59ad0c.css.map",
+    "main.73436ddc.js.map": "/Portfolio-Steam/static/js/main.73436ddc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb59ad0c.css",
+    "static/js/main.73436ddc.js"
+  ]
+}
