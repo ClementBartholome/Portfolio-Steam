@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import { getAllProjects } from "../components/getData";
+import { useState, useRef, useEffect, useContext } from "react";
+import ProjectsContext from "../contexts/ProjectsContext";
 
-export default function useCarrousel(images) {
+export default function useCarrousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -12,15 +12,10 @@ export default function useCarrousel(images) {
 
   const carrouselImageRef = useRef(null);
   const carrouselContainerRef = useRef(null);
-  const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const projectsData = await getAllProjects();
-      setProjects(projectsData);
-    };
-    fetchProjects();
-  }, []);
+  const {images, projects} = useContext(ProjectsContext);
+
+ 
 
   function imageSize() {
     const carrouselImage = carrouselImageRef.current;

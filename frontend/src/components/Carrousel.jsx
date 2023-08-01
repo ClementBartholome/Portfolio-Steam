@@ -30,10 +30,8 @@ export default function Carrousel() {
     closeModal,
   } = useCarrousel();
 
-  const {projects, isLoading} = useContext(ProjectsContext);
-  const images = projects.map((project) => project.image);
-
-  const { token, setToken } = useContext(AuthContext);
+  const {isLoading, images} = useContext(ProjectsContext);
+    const { token, setToken } = useContext(AuthContext);
 
   const logOut = () => {
     setToken("");

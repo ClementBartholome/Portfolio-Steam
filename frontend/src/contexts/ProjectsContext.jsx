@@ -6,9 +6,10 @@ const ProjectsContext = createContext();
 export const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const images = projects.map((project) => project.image);
 
   useEffect(() => {
-    const fetchProjectsData = async () => {
+    const fetchProjects = async () => {
       try {
         const projectsData = await getAllProjects();
         setProjects(projectsData);
@@ -18,11 +19,11 @@ export const ProjectsProvider = ({ children }) => {
         setIsLoading(false); 
       }
     };
-    fetchProjectsData();
+    fetchProjects();
   }, []);
 
   return (
-    <ProjectsContext.Provider value={{projects, isLoading}}>
+    <ProjectsContext.Provider value={{projects, isLoading, images}}>
       {children}
     </ProjectsContext.Provider>
   );
