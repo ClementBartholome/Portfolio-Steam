@@ -3,6 +3,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const helmet = require("helmet");
 
 const projectRoutes = require("./routes/project");
 const userRoutes = require("./routes/user");
@@ -10,6 +11,8 @@ const userRoutes = require("./routes/user");
 require("dotenv").config();
 
 const app = express();
+
+app.use(helmet());
 
 app.use(express.json());
 mongoose
