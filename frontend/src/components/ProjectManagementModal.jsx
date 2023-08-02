@@ -44,8 +44,8 @@ export default function ProjectManagement({setIsProjectManagementModalOpen, isPr
           aria-label="close">
           &times;
         </span>
-        <ProjectList />
         <AddProject />
+        <ProjectList />
       </ReactModal>
     </>
   );
