@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
 import axios from "axios";
 
+const baseURL = "https://portfolio-steam-backend.onrender.com/api";
+
 export default function ProjectList() {
 
     const { projects, setProjects } = useContext(ProjectsContext);
@@ -12,7 +14,7 @@ export default function ProjectList() {
 
     async function handleDeleteProject(projectId) {
       try {
-        await axios.delete(`/api/projects/${projectId}`);
+        await axios.delete(`${baseURL}/projects/${projectId}`);
   
         // Update the projects list in the frontend by removing the deleted project
         setProjects((prevProjects) =>
