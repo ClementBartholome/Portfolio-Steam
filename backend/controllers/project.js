@@ -8,12 +8,6 @@ exports.getAllProjects = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-exports.getSingleProject = (req, res, next) => {
-  Project.findOne({ _id: req.params.id })
-    .then((project) => res.status(200).json(project))
-    .catch((error) => res.status(400).json({ error }));
-};
-
 exports.createProject = (req, res, next) => {
   const project = new Project({
     id: req.body.id,
@@ -33,3 +27,15 @@ exports.createProject = (req, res, next) => {
       res.status(400).json({ error });
     });
 };
+
+exports.deleteProject = (req, res, next) => {
+  Project.findByIdAndDelete({ _id: req.params.id })
+    .then((deletedProject) => {
+      if (!deletedProject) {
+        return res.status(404).json({ message: "Projet non trouvé" });
+      }
+      res.status(200).json({ message: "Projet supprimé avec succès" });
+    })
+    .catch((error) => res.status(500).json({ error }));
+};
+
