@@ -7,14 +7,20 @@ const baseURL = "https://portfolio-steam-backend.onrender.com/api";
 export default function ProjectList() {
 
     const { projects, setProjects } = useContext(ProjectsContext);
+    const token = localStorage.getItem("token");
 
     function handleEditProject(project) {
         return
     }
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
 
     async function handleDeleteProject(projectId) {
       try {
-        await axios.delete(`${baseURL}/projects/${projectId}`);
+        await axios.delete(`${baseURL}/projects/${projectId}`, config);
   
         // Update the projects list in the frontend by removing the deleted project
         setProjects((prevProjects) =>
@@ -23,7 +29,8 @@ export default function ProjectList() {
       } catch (error) {
         console.error("Error deleting project:", error);
       }
-    }
+
+  }
 
     return (
         <div className="project-list" data-modal>
