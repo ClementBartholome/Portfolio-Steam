@@ -6,7 +6,7 @@
 
 ## Screenshot
 
-![Screenshot](https://storage.googleapis.com/github-clementbartholome/project_grimoire.png)
+![Screenshot](https://storage.googleapis.com/github-clementbartholome/project_portfolio.png)
 
 ## Description
 
