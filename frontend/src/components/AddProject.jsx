@@ -84,14 +84,6 @@ export default function AddProject() {
           />
         </div>
         <div>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Description du projet"
-            required
-          />
-        </div>
-        <div>
           <input
             type="text"
             value={tags}
@@ -115,6 +107,14 @@ export default function AddProject() {
             value={demo}
             onChange={(e) => setDemo(e.target.value)}
             placeholder="Lien vers la démo (facultatif)"
+          />
+        </div>
+        <div>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Description du projet"
+            required
           />
         </div>
         <div>
