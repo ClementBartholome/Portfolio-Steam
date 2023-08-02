@@ -8,7 +8,6 @@ const auth = require("../middlewares/auth");
 const projectCtrl = require("../controllers/project");
 
 router.get("/", projectCtrl.getAllProjects);
-router.get("/:id", projectCtrl.getSingleProject);
 
 router.post("/", auth, projectCtrl.createProject);
 
