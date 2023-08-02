@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Project = require("../models/project");
 
 exports.getAllProjects = (req, res, next) => {

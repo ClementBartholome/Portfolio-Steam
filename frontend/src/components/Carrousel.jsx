@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import ReactModal from "react-modal";
 import ViewProjectBtn from "./ViewProjectBtn";
 import Thumbnails from "./Thumbnails";
-import ProjectManagement from "./ModifyBtn";
+import ProjectManagement from "./ProjectManagement";
 import useCarrousel from "../hooks/useCarrousel";
 import AuthContext from "../contexts/AuthContext";
 import ProjectsContext from "../contexts/ProjectsContext";

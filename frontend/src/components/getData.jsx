@@ -11,13 +11,3 @@ export const getAllProjects = async () => {
     return [];
   }
 };
-
-export const getSingleProject = async (id) => {
-  try {
-    const response = await axios.get(`${baseURL}/projects/${id}`);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching single project:", error);
-    return null;
-  }
-};

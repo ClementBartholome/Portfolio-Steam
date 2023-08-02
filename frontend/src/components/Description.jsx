@@ -42,13 +42,8 @@ export default function Description() {
         </div>
         <p>
           Dans l'univers infini du développement web, embarquez pour une aventure
-          épique aux côtés de Clément Bartholomé. Engagez-le pour agrandir votre empire numérique et triompher de tous les défis technologiques.
+          épique aux côtés de Clément Bartholomé. Engagez-le et triomphez de tous les défis technologiques.
         </p>
-        {/* <p>
-          Clément Bartholomé est un développeur web passionné par le front-end
-          et le webdesign. Dans un monde saisissant de réalisme, recrutez-le et
-          étendez votre empire numérique.
-        </p> */}
         <button onClick={handleSeeMoreClick}>En savoir plus</button>
 
         <span>Évaluations : extrêmements positives</span>

@@ -31,7 +31,7 @@ export default function ProjectManagement() {
 
   return (
     <>
-      <button onClick={handleClick}>Modifier</button>
+      <button onClick={handleClick}>Gérer les projets</button>
       <ReactModal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
