@@ -31,9 +31,9 @@ exports.createProject = (req, res, next) => {
 exports.deleteProject = (req, res, next) => {
   Project.findByIdAndDelete({ _id: req.params.id })
     .then((deletedProject) => {
-      if (!deletedProject) {
-        return res.status(404).json({ message: "Projet non trouvé" });
-      }
+      if (project.userId != req.auth.userId) {
+        res.status(401).json({ message: "Non autorisé" });
+      } 
       res.status(200).json({ message: "Projet supprimé avec succès" });
     })
     .catch((error) => res.status(500).json({ error }));
