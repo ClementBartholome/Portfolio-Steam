@@ -1,39 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactModal from "react-modal";
 import AddProject from "./AddProject";
+import ProjectList from "./ProjectList";
 
-export default function ProjectManagement() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function ProjectManagement({setIsProjectManagementModalOpen, isProjectManagementModalOpen}) {
 
-  function handleClick() {
-    setIsModalOpen(true);
+
+  const closeModal = () => { 
+    setIsProjectManagementModalOpen(false);
   }
 
-  function closeModal() {
-    setIsModalOpen(false);
-  }
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (isModalOpen) {
+  const handleOutsideClick = (e) => {
+      if (isProjectManagementModalOpen) {
         if (!e.target.closest("[data-modal]")) {
           closeModal();
         }
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [isModalOpen]);
+  document.addEventListener("mousedown", handleOutsideClick);
 
   return (
     <>
-      <button onClick={handleClick}>Gérer les projets</button>
       <ReactModal
-        isOpen={isModalOpen}
+        isOpen={isProjectManagementModalOpen}
         onRequestClose={closeModal}
         contentLabel="Project Management Modal"
         appElement={document.getElementById("root")}
@@ -54,7 +44,7 @@ export default function ProjectManagement() {
           aria-label="close">
           &times;
         </span>
-        <h2>Ajouter un projet</h2>
+        <ProjectList />
         <AddProject />
       </ReactModal>
     </>

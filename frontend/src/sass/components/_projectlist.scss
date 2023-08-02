@@ -1,0 +1,33 @@
+.project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    .project-item {
+
+        img {
+            width: 300px;
+            height: 150px !important;
+        }
+        .project-buttons {
+            display: flex;
+        justify-content: space-between;
+
+            button {
+                color: #fff;
+            background-color: #1a9fff;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 2px;
+
+            &:hover {
+                background-color: #0bf;
+            transition: 0.3s;
+                }
+            }
+        }
+    }
+}

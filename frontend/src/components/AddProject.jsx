@@ -54,6 +54,8 @@ export default function AddProject() {
   };
 
   return (
+    <>
+    <h2>Ajouter un projet</h2>
     <form className="add-project-form" onSubmit={handleSubmit} data-modal>
       <div className="add-form-content">
         <div>
@@ -129,5 +131,6 @@ export default function AddProject() {
         </p>
       )}
     </form>
+    </>
   );
 }

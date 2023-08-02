@@ -9,15 +9,15 @@
 @import "./components/footer";
 @import "./components/success";
 @import "./components/slider";
-@import "./components/reactmodal";
+@import "./modals/reactmodal";
 @import "./components/viewproject";
-@import "./components/reactmodal";
 @import "./components/thumbnails";
-@import "./components/projectmodal";
-@import "./components/description-modal";
-@import "./components/contact-modal";
+@import "./modals/project-modal";
+@import "./modals/description-modal";
+@import "./modals/contact-modal";
 @import "./components/loader";
 @import "./components/addproject";
+@import "./components/projectlist";
 
 @import "./pages/homepage";
 @import "./pages/loginpage";

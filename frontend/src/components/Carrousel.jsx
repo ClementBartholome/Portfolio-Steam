@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ReactModal from "react-modal";
 import ViewProjectBtn from "./ViewProjectBtn";
 import Thumbnails from "./Thumbnails";
-import ProjectManagement from "./ProjectManagement";
+import ProjectManagementModal from "./ProjectManagementModal";
 import useCarrousel from "../hooks/useCarrousel";
 import AuthContext from "../contexts/AuthContext";
 import ProjectsContext from "../contexts/ProjectsContext";
@@ -30,8 +30,9 @@ export default function Carrousel() {
     closeModal,
   } = useCarrousel();
 
+  const [isProjectManagementModalOpen, setIsProjectManagementModalOpen] = useState(false);
   const {isLoading, images} = useContext(ProjectsContext);
-    const { token, setToken } = useContext(AuthContext);
+  const { token, setToken } = useContext(AuthContext);
 
   const logOut = () => {
     setToken("");
@@ -42,12 +43,16 @@ export default function Carrousel() {
       <h2>Projets</h2>
       {token ? (
         <div className="log-actions">
-          <ProjectManagement />
+           <button onClick={() => setIsProjectManagementModalOpen(true)}>Gérer les projets</button>
           <button onClick={logOut}>Déconnexion</button>
         </div>
-      ) : (
+      ) : 
         ""
-      )}
+      }
+      {isProjectManagementModalOpen ? (
+  <ProjectManagementModal isProjectManagementModalOpen={isProjectManagementModalOpen}
+  setIsProjectManagementModalOpen={setIsProjectManagementModalOpen}/>
+) : ""}
       <section className="carrousel">
       {isLoading ? (
         <Loader /> 
@@ -157,6 +162,7 @@ export default function Carrousel() {
             </div>
           </div>
         )}
+        
       </ReactModal>
     </div>
   );
