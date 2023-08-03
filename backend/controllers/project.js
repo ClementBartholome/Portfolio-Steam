@@ -30,7 +30,7 @@ exports.createProject = (req, res, next) => {
 
 exports.deleteProject = (req, res, next) => {
   Project.findByIdAndDelete({ _id: req.params.id })
-    .then((deletedProject) => {
+    .then((project) => {
       if (project.userId != req.auth.userId) {
         res.status(401).json({ message: "Non autorisé" });
       } 
@@ -39,3 +39,30 @@ exports.deleteProject = (req, res, next) => {
     .catch((error) => res.status(500).json({ error }));
 };
 
+
+exports.updateProject = (req, res, next) => {
+  const { id, title, image, description, tags, code, demo } = req.body;
+
+
+
+  Project.findByIdAndUpdate(
+    { _id: req.params.id }, // Find the project by ID and update it
+    {
+      id,
+      title,
+      image,
+      description,
+      tags: tags.split(","), 
+      code,
+      demo,
+    },
+    { new: true } 
+  )
+    .then((updatedProject) => {
+      if (!updatedProject) {
+        return res.status(404).json({ message: "Projet non trouvé" });
+      }
+      res.status(200).json(updatedProject);
+    })
+    .catch((error) => res.status(500).json({ error }));
+};
