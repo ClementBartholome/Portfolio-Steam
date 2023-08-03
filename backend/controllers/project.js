@@ -43,8 +43,6 @@ exports.deleteProject = (req, res, next) => {
 exports.updateProject = (req, res, next) => {
   const { id, title, image, description, tags, code, demo } = req.body;
 
-
-
   Project.findByIdAndUpdate(
     { _id: req.params.id }, // Find the project by ID and update it
     {
@@ -52,7 +50,7 @@ exports.updateProject = (req, res, next) => {
       title,
       image,
       description,
-      tags: tags.split(","), 
+      tags,
       code,
       demo,
     },

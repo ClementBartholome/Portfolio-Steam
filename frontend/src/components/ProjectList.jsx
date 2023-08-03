@@ -40,6 +40,18 @@ export default function ProjectList() {
     event.preventDefault();
 
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.error("Utilisateur non authentifié.");
+        return;
+      }
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
       await axios.put(
         `${baseURL}/projects/${editedProject._id}`,
         editedProject,
@@ -51,6 +63,7 @@ export default function ProjectList() {
       console.error("Erreur lors de la mise à jour du projet :", error);
     }
   }
+
 
 
   function handleInputChange(event) {
