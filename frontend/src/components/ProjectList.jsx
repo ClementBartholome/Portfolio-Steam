@@ -7,6 +7,9 @@ const baseURL = "https://portfolio-steam-backend.onrender.com/api";
 export default function ProjectList() {
 
     const { projects, setProjects } = useContext(ProjectsContext);
+    const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+    const [editedProject, setEditedProject] = useState(null);
+
     const token = localStorage.getItem("token");
     const config = {
       headers: {
@@ -14,9 +17,6 @@ export default function ProjectList() {
       },
     };
 
-    const [isEditFormOpen, setIsEditFormOpen] = useState(false);
-    const [editedProject, setEditedProject] = useState(null);
-  
     function handleEditProject(project) {
       // Open the edit form and set the current project to be edited
       setIsEditFormOpen(true);
@@ -38,40 +38,37 @@ export default function ProjectList() {
 
   async function handleEditFormSubmit(event) {
     event.preventDefault();
-
-    try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        console.error("Utilisateur non authentifié.");
-        return;
+    
+      try {
+        await axios.put(
+          `${baseURL}/projects/${editedProject._id}`,
+          editedProject,
+          config
+        );
+        setIsEditFormOpen(false);
+        setEditedProject(null);
+      } catch (error) {
+        console.error("Erreur lors de la mise à jour du projet :", error);
       }
-
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-
-      await axios.put(
-        `${baseURL}/projects/${editedProject._id}`,
-        editedProject,
-        config
-      );
-      setIsEditFormOpen(false);
-      setEditedProject(null);
-    } catch (error) {
-      console.error("Erreur lors de la mise à jour du projet :", error);
-    }
   }
 
 
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setEditedProject((prevProject) => ({
-      ...prevProject,
-      [name]: value,
-    }));
+  
+    if (name === "tags") {
+      const tagsArray = value.trim().split(",");
+      setEditedProject((prevProject) => ({
+        ...prevProject,
+        [name]: tagsArray,
+      }));
+    } else {
+      setEditedProject((prevProject) => ({
+        ...prevProject,
+        [name]: value,
+      }));
+    }
   }
 
   return (
@@ -80,7 +77,7 @@ export default function ProjectList() {
         <div className="edit-form-container">
           <div className="edit-form-header">
             <h2>Modifier le projet</h2>
-            <button onClick={() => setIsEditFormOpen(false)}>
+            <button className="back-btn" onClick={() => setIsEditFormOpen(false)}>
               Revenir en arrière
             </button>
           </div>
