@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { addProject } from "./Api";
 
 export default function AddProject() {
   const [id, setId] = useState("");
@@ -27,14 +27,7 @@ export default function AddProject() {
     const token = localStorage.getItem("token");
 
     if (token) {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-
-      axios
-        .post("https://portfolio-steam-backend.onrender.com/api/projects", projectData, config)
+      addProject(projectData, token)
         .then((response) => {
           console.log("Projet ajouté avec succès!");
           setConfirmationMessage("Projet ajouté !");

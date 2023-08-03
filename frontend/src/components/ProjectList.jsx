@@ -6,24 +6,24 @@ const baseURL = "https://portfolio-steam-backend.onrender.com/api";
 
 export default function ProjectList() {
 
-    const { projects, setProjects } = useContext(ProjectsContext);
-    const [isEditFormOpen, setIsEditFormOpen] = useState(false);
-    const [editedProject, setEditedProject] = useState(null);
+  const { projects, setProjects } = useContext(ProjectsContext);
+  const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+  const [editedProject, setEditedProject] = useState(null);
 
-    const token = localStorage.getItem("token");
-    const config = {
+  const token = localStorage.getItem("token");
+  const config = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
 
-    function handleEditProject(project) {
+  function handleEditProject(project) {
       // Open the edit form and set the current project to be edited
       setIsEditFormOpen(true);
       setEditedProject(project);
     }
       
-    async function handleDeleteProject(projectId) {
+  async function handleDeleteProject(projectId) {
       try {
         await axios.delete(`${baseURL}/projects/${projectId}`, config);
   
@@ -37,7 +37,7 @@ export default function ProjectList() {
   }
 
   async function handleEditFormSubmit(event) {
-    event.preventDefault();
+      event.preventDefault();
     
       try {
         await axios.put(
