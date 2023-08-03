@@ -20,7 +20,7 @@ export const ProjectsProvider = ({ children }) => {
       }
     };
     fetchProjects();
-  }, []);
+  }, [projects]);
 
   return (
     <ProjectsContext.Provider value={{projects, isLoading, images}}>

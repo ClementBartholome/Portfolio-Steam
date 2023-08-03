@@ -6,6 +6,20 @@
     gap: 20px;
     padding: 20px;
 
+    .back-btn {
+        margin-bottom: 20px;
+        border-radius: 2px;
+        background: rgba(103, 193, 245, 0.2);
+        padding: 5px 10px;
+        border: none;
+        color: #67c1f5;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: 300ms;
+        }
+    }
+
     .project-item {
 
         img {
@@ -31,3 +45,4 @@
         }
     }
 }
+
