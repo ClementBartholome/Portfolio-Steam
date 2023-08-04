@@ -33,8 +33,9 @@ exports.deleteProject = (req, res, next) => {
     .then((project) => {
       if (project.userId != req.auth.userId) {
         res.status(401).json({ message: "Non autorisé" });
-      } 
-      res.status(200).json({ message: "Projet supprimé avec succès" });
+      } else {
+        res.status(200).json({ message: "Projet supprimé avec succès" });
+      }
     })
     .catch((error) => res.status(500).json({ error }));
 };
