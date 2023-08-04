@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getAllProjects } from "../components/getData";
+import { getAllProjects } from "../components/Api";
 
 const ProjectsContext = createContext();
 

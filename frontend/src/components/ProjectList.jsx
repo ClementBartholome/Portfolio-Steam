@@ -1,8 +1,7 @@
 import React, {useContext, useState} from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
-import axios from "axios";
+import { updateProject, deleteProject } from "./Api";
 
-const baseURL = "https://portfolio-steam-backend.onrender.com/api";
 
 export default function ProjectList() {
 
@@ -11,11 +10,6 @@ export default function ProjectList() {
   const [editedProject, setEditedProject] = useState(null);
 
   const token = localStorage.getItem("token");
-  const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
 
   function handleEditProject(project) {
       // Open the edit form and set the current project to be edited
@@ -25,7 +19,7 @@ export default function ProjectList() {
       
   async function handleDeleteProject(projectId) {
       try {
-        await axios.delete(`${baseURL}/projects/${projectId}`, config);
+        await deleteProject(projectId, token)
   
         // Update the projects list by removing the deleted project
         setProjects((prevProjects) =>
@@ -37,19 +31,15 @@ export default function ProjectList() {
   }
 
   async function handleEditFormSubmit(event) {
-      event.preventDefault();
-    
-      try {
-        await axios.put(
-          `${baseURL}/projects/${editedProject._id}`,
-          editedProject,
-          config
-        );
-        setIsEditFormOpen(false);
-        setEditedProject(null);
-      } catch (error) {
-        console.error("Erreur lors de la mise à jour du projet :", error);
-      }
+    event.preventDefault();
+  
+    try {
+      await updateProject(editedProject._id, editedProject, token);
+      setIsEditFormOpen(false);
+      setEditedProject(null);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour du projet :", error);
+    }
   }
 
 
