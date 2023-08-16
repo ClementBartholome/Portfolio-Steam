@@ -1,10 +1,8 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
 import { updateProject, deleteProject } from "./Api";
 
-
 export default function ProjectList() {
-
   const { projects, setProjects } = useContext(ProjectsContext);
   const [isEditFormOpen, setIsEditFormOpen] = useState(false);
   const [editedProject, setEditedProject] = useState(null);
@@ -12,27 +10,27 @@ export default function ProjectList() {
   const token = localStorage.getItem("token");
 
   function handleEditProject(project) {
-      // Open the edit form and set the current project to be edited
-      setIsEditFormOpen(true);
-      setEditedProject(project);
-    }
-      
+    // Open the edit form and set the current project to be edited
+    setIsEditFormOpen(true);
+    setEditedProject(project);
+  }
+
   async function handleDeleteProject(projectId) {
-      try {
-        await deleteProject(projectId, token)
-  
-        // Update the projects list by removing the deleted project
-        setProjects((prevProjects) =>
-          prevProjects.filter((project) => project._id !== projectId)
-        );
-      } catch (error) {
-        console.error("Erreur lors de la suppression du projet :", error);
-      }
+    try {
+      await deleteProject(projectId, token);
+
+      // Update the projects list by removing the deleted project
+      setProjects((prevProjects) =>
+        prevProjects.filter((project) => project._id !== projectId)
+      );
+    } catch (error) {
+      console.error("Erreur lors de la suppression du projet :", error);
+    }
   }
 
   async function handleEditFormSubmit(event) {
     event.preventDefault();
-  
+
     try {
       await updateProject(editedProject._id, editedProject, token);
       setIsEditFormOpen(false);
@@ -42,11 +40,9 @@ export default function ProjectList() {
     }
   }
 
-
-
   function handleInputChange(event) {
     const { name, value } = event.target;
-  
+
     if (name === "tags") {
       const tagsArray = value.trim().split(",");
       setEditedProject((prevProject) => ({
@@ -67,12 +63,13 @@ export default function ProjectList() {
         <div className="edit-form-container">
           <div className="edit-form-header">
             <h2>Modifier le projet</h2>
-            <button className="back-btn" onClick={() => setIsEditFormOpen(false)}>
+            <button
+              className="back-btn"
+              onClick={() => setIsEditFormOpen(false)}>
               Revenir en arrière
             </button>
           </div>
           <form className="edit-form" onSubmit={handleEditFormSubmit}>
-            {/* Use the same form fields as in AddProject, but pre-fill them with project data */}
             <input
               type="text"
               name="title"
@@ -111,8 +108,7 @@ export default function ProjectList() {
             <textarea
               value={editedProject.description}
               onChange={handleInputChange}
-              name="description"
-            ></textarea>
+              name="description"></textarea>
             <button type="submit">Mettre à jour</button>
           </form>
         </div>

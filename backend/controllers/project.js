@@ -4,6 +4,7 @@ const Project = require("../models/project");
 
 exports.getAllProjects = (req, res, next) => {
   Project.find()
+    .sort({ _id: 1 })
     .then((projects) => res.status(200).json(projects))
     .catch((error) => res.status(400).json({ error }));
 };
@@ -40,7 +41,6 @@ exports.deleteProject = (req, res, next) => {
     .catch((error) => res.status(500).json({ error }));
 };
 
-
 exports.updateProject = (req, res, next) => {
   const { id, title, image, description, tags, code, demo } = req.body;
 
@@ -55,7 +55,7 @@ exports.updateProject = (req, res, next) => {
       code,
       demo,
     },
-    { new: true } 
+    { new: true }
   )
     .then((updatedProject) => {
       if (!updatedProject) {
