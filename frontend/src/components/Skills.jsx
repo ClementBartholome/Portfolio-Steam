@@ -21,6 +21,11 @@ export default function Skills() {
       </div>
       <hr />
       <div className="skill">
+        <span>PHP / MySQL</span>
+        <img src={checkmark} alt="Checkmark" className="checkmark-back"></img>
+      </div>
+      <hr />
+      <div className="skill">
         <span>MongoDB</span>
         <img src={checkmark} alt="Checkmark" className="checkmark-back"></img>
       </div>
