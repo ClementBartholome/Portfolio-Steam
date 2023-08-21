@@ -54,3 +54,26 @@
     padding: 40px 20px;
   }
 }
+
+@media (max-width: 424.98px) {
+  .cta {
+    p {
+      font-size: 1.1rem;
+    }
+    p:last-of-type {
+      padding: 20px 0 70px 20px;
+    }
+
+    .contact-container {
+      right: 10px;
+      bottom: 74px;
+      font-size: 1.1rem;
+      width: 238px;
+    }
+  }
+
+  .cta .contact-container span,
+  .cta .contact-container button {
+    font-size: 1.1rem;
+  }
+}

@@ -72,10 +72,20 @@ header {
   }
 }
 
-// @media (max-width: 1024px) {
-//   header .header-info {
-//     flex-direction: column;
+@media (max-width: 1024px) {
+  header .header-info {
+    flex-direction: column;
 
-//     align-items: flex-start;
-//   }
-// }
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 424.98px) {
+  header .header-info h1 {
+    font-size: 1.9rem;
+  }
+
+  header .header-info .social-links .location {
+    font-size: 1.1rem;
+  }
+}
