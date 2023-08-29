@@ -28,16 +28,16 @@ body {
   color: white;
   font-family: "Motiva Sans", sans-serif;
   background: #171a21;
-  background: linear-gradient(
-    -45deg,
-    #0c0e11,
-    #2b2f3a,
-    #171a21,
-    #2b2f3a,
-    #0c0e11
-  );
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  // background: linear-gradient(
+  //   -45deg,
+  //   #0c0e11,
+  //   #2b2f3a,
+  //   #171a21,
+  //   #2b2f3a,
+  //   #0c0e11
+  // );
+  // background-size: 400% 400%;
+  // animation: gradient 10s ease infinite;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 0 20px 0;
