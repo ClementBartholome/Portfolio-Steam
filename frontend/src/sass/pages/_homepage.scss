@@ -145,9 +145,6 @@
 @media (max-width: 424.98px) {
   .bot-container {
     padding: 60px 10px;
-    .bot-container__right .skills {
-      max-width: 320px;
-    }
   }
 
   .bot-container .bot-container__right .skills span {
@@ -169,8 +166,71 @@
   .bot-container .bot-container__right .skills .skill .checkmark-back {
     margin-left: 130px;
   }
+}
 
+@media (max-width: 374.98px) {
+  .bot-container .bot-container__right .skills .categories {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-front {
+    margin-left: 40px;
+  }
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 160px;
+  }
+}
+
+@media (max-width: 325px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 109px;
+  }
+}
+
+@media (min-width: 425px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-front {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 424.98px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-front {
+    margin-left: 70px;
+  }
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 195px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 400px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 180px;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 375px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 330px) and (max-width: 350px) {
+  .bot-container .bot-container__right .skills .skill .checkmark-front {
+    margin-left: 10px;
+  }
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 120px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 330px) {
   .bot-container .bot-container__right .skills .skill .checkmark-front {
     margin-left: 0;
+  }
+
+  .bot-container .bot-container__right .skills .skill .checkmark-back {
+    margin-left: 120px;
   }
 }
