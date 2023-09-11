@@ -26,20 +26,20 @@ export default function LoginPage() {
       });
   };
 
-  const handleSignup = (e) => {
-    e.preventDefault();
-    axios
-      .post("https://portfolio-steam-backend.onrender.com/api/auth/signup", {
-        email,
-        password,
-      })
-      .then((response) => {
-        console.log("Inscription réussie!");
-      })
-      .catch((error) => {
-        console.error("Inscription échouée", error);
-      });
-  };
+  // const handleSignup = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post("https://portfolio-steam-backend.onrender.com/api/auth/signup", {
+  //       email,
+  //       password,
+  //     })
+  //     .then((response) => {
+  //       console.log("Inscription réussie!");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Inscription échouée", error);
+  //     });
+  // };
 
   return (
     <main className="login-page">
