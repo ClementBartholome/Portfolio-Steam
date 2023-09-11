@@ -72,9 +72,9 @@ export default function LoginPage() {
             <button type="submit" className="login-btn" onClick={handleLogin}>
               Connexion
             </button>
-            <button type="submit" className="signup-btn" onClick={handleSignup}>
+            {/* <button type="submit" className="signup-btn" onClick={handleSignup}>
               Inscription
-            </button>
+            </button> */}
           </div>
         </div>
       </form>
