@@ -29,7 +29,10 @@ export default function LoginPage() {
   const handleSignup = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/api/auth/signup", { email, password })
+      .post("https://portfolio-steam-backend.onrender.com/api/auth/signup", {
+        email,
+        password,
+      })
       .then((response) => {
         console.log("Inscription réussie!");
       })
