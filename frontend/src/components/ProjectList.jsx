@@ -1,13 +1,27 @@
 import React, { useContext, useState } from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
-import { updateProject, deleteProject } from "./Api";
+import { updateProject, deleteProject, getAllProjects } from "./Api";
 
 export default function ProjectList() {
   const { projects, setProjects } = useContext(ProjectsContext);
   const [isEditFormOpen, setIsEditFormOpen] = useState(false);
   const [editedProject, setEditedProject] = useState(null);
-
   const token = localStorage.getItem("token");
+
+  // Function to fetch projects
+  const fetchProjects = async () => {
+    try {
+      const projectsData = await getAllProjects();
+      setProjects(projectsData);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+    }
+  };
+
+  // Function to update the project list after editing or deleting
+  const updateProjectList = async () => {
+    fetchProjects();
+  };
 
   function handleEditProject(project) {
     // Open the edit form and set the current project to be edited
@@ -23,6 +37,9 @@ export default function ProjectList() {
       setProjects((prevProjects) =>
         prevProjects.filter((project) => project._id !== projectId)
       );
+
+      // Update the project list
+      updateProjectList();
     } catch (error) {
       console.error("Erreur lors de la suppression du projet :", error);
     }
@@ -35,6 +52,9 @@ export default function ProjectList() {
       await updateProject(editedProject._id, editedProject, token);
       setIsEditFormOpen(false);
       setEditedProject(null);
+
+      // Update the project list
+      updateProjectList();
     } catch (error) {
       console.error("Erreur lors de la mise à jour du projet :", error);
     }
@@ -65,7 +85,8 @@ export default function ProjectList() {
             <h2>Modifier le projet</h2>
             <button
               className="back-btn"
-              onClick={() => setIsEditFormOpen(false)}>
+              onClick={() => setIsEditFormOpen(false)}
+            >
               Revenir en arrière
             </button>
           </div>
@@ -108,7 +129,8 @@ export default function ProjectList() {
             <textarea
               value={editedProject.description}
               onChange={handleInputChange}
-              name="description"></textarea>
+              name="description"
+            ></textarea>
             <button type="submit">Mettre à jour</button>
           </form>
         </div>

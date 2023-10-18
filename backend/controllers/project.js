@@ -30,15 +30,17 @@ exports.createProject = (req, res, next) => {
 };
 
 exports.deleteProject = (req, res, next) => {
-  Project.findByIdAndDelete({ _id: req.params.id })
-    .then((project) => {
-      if (project.userId != req.auth.userId) {
-        res.status(401).json({ message: "Non autorisé" });
-      } else {
-        res.status(200).json({ message: "Projet supprimé avec succès" });
-      }
-    })
-    .catch((error) => res.status(500).json({ error }));
+  if (!req.auth) {
+    return res.status(401).json({ message: "Non autorisé" });
+  } else {
+    Project.findByIdAndDelete({ _id: req.params.id })
+      .then(() => {
+        res.status(200).json({ message: "Projet supprimé !" });
+      })
+      .catch((error) => {
+        res.status(400).json({ error });
+      });
+  }
 };
 
 exports.updateProject = (req, res, next) => {
