@@ -12,7 +12,7 @@ export const ProjectsProvider = ({ children }) => {
     const fetchProjects = async () => {
       try {
         const projectsData = await getAllProjects();
-        setProjects(projectsData.slice(0, 3));
+        setProjects(projectsData);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -20,7 +20,7 @@ export const ProjectsProvider = ({ children }) => {
       }
     };
     fetchProjects();
-  }, [projects]);
+  }, []);
 
   return (
     <ProjectsContext.Provider value={{ projects, isLoading, images }}>
