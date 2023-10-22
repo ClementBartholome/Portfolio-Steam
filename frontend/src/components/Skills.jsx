@@ -40,10 +40,6 @@ export default function Skills() {
         <img src={checkmark} alt="Checkmark" className="checkmark-front"></img>
       </div>
       <hr />
-      <div className="skill">
-        <span>Firebase</span>
-        <img src={checkmark} alt="Checkmark" className="checkmark-back"></img>
-      </div>
     </section>
   );
 }
