@@ -39,7 +39,6 @@ export default function Skills() {
         <span>SASS / SCSS</span>
         <img src={checkmark} alt="Checkmark" className="checkmark-front"></img>
       </div>
-      <hr />
     </section>
   );
 }
