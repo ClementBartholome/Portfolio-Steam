@@ -8,7 +8,6 @@ export default function ProjectList() {
   const [editedProject, setEditedProject] = useState(null);
   const token = localStorage.getItem("token");
 
-  // Function to fetch projects
   const fetchProjects = async () => {
     try {
       const projectsData = await getAllProjects();
@@ -18,7 +17,7 @@ export default function ProjectList() {
     }
   };
 
-  // Function to update the project list after editing or deleting
+  // Update the project list after editing or deleting
   const updateProjectList = async () => {
     fetchProjects();
   };
@@ -52,8 +51,6 @@ export default function ProjectList() {
       await updateProject(editedProject._id, editedProject, token);
       setIsEditFormOpen(false);
       setEditedProject(null);
-
-      // Update the project list
       updateProjectList();
     } catch (error) {
       console.error("Erreur lors de la mise à jour du projet :", error);
