@@ -2,7 +2,7 @@
 
 ## Liens
 
-[Live](https://clementbartholome.fr/)
+OFFLINE - [Live](https://clementbartholome.fr/)
 
 ## Screenshot
 
